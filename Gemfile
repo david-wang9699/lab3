@@ -36,11 +36,6 @@ gem "yaml_db"
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "rspec-rails"
-  gem "bundler-audit", require: false
-  gem "rubocop", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-rails-omakase", require: false
-  gem "brakeman", require: false
 end
 
 group :development do
@@ -51,3 +46,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "brakeman"
+gem "rubocop"
