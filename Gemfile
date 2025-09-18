@@ -1,51 +1,59 @@
 source "https://rubygems.org"
 
-# Core Rails
-gem "rails", "~> 8.0.2", ">= 8.0.2.1"
-gem "pg", "~> 1.1"
-gem "puma", ">= 5.0"
-gem "propshaft"
+ruby "3.3.9"  # Match your local Ruby version
+
+# Core Rails framework
+gem "rails", "~> 7.1.3"
+
+# Use Puma as the app server
+gem "puma", "~> 6.4"
+
+# Use SCSS for stylesheets (optional if you use CSS only)
+gem "sass-rails", ">= 6"
+
+# Transpile app-like JavaScript
 gem "importmap-rails"
+
+# Hotwire for real-time features
 gem "turbo-rails"
 gem "stimulus-rails"
+
+# Build JSON APIs easily
 gem "jbuilder"
-gem "sprockets-rails"
-gem "rexml"
 
-# Windows-specific
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+# Use Redis adapter for Action Cable (optional)
+# gem "redis", "~> 5.0"
 
-# Caching / Queues / Cable
-gem "solid_cache"
-gem "solid_queue"
-gem "solid_cable"
+# Image processing (Active Storage)
+gem "image_processing", "~> 1.2"
 
-# Performance
-gem "bootsnap", require: false
+# Authentication / Authorization (optional)
+# gem "devise"
+# gem "pundit"
 
-# Deployment
-gem "kamal", require: false
-gem "thruster", require: false
-
-# Optional image processing
-# gem "image_processing", "~> 1.2"
-
-# Data export/import
-gem "yaml_db"
-
+# Database adapters
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-  gem "rspec-rails"
+  gem "sqlite3", "~> 1.4"
 end
 
+group :production do
+  gem "pg", "~> 1.5"
+end
+
+# Development tools
 group :development do
   gem "web-console"
+  gem "listen", "~> 3.3"
+  gem "spring"
+  gem "spring-watcher-listen", "~> 2.0.0"
 end
 
+# Test tools
 group :test do
   gem "capybara"
   gem "selenium-webdriver"
+  gem "webdrivers"
 end
 
-gem "brakeman"
-gem "rubocop"
+# Windows-specific gems (only load on Windows)
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
