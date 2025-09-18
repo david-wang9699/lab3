@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "3.3.9"  # Match your local Ruby version
 
+# Gemfile (near the top, not inside any group)
+gem "bootsnap", require: false
 # Core Rails framework
 gem "rails", "~> 7.1.3"
 
